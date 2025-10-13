@@ -28,7 +28,7 @@ export default function ProjectCard({ project, index }) {
   //   }
   // };
 
-  const hasImage = project.img && project.img.trim() !== "";
+  const hasImage = project.imageLink && project.imageLink.trim() !== "";
 
   return (
     <motion.div
@@ -49,7 +49,7 @@ export default function ProjectCard({ project, index }) {
       <div className="relative h-48 w-full overflow-hidden">
         {hasImage ? (
           <img
-            src={project.img}
+            src={project.imageLink}
             alt={project.title}
             className="object-cover h-full w-full rounded-t-2xl group-hover:scale-105 transition-transform duration-700"
           />
@@ -81,9 +81,9 @@ export default function ProjectCard({ project, index }) {
         {/* Footer: Links + Like */}
         <div className="mt-auto flex justify-between items-center">
           <div className="flex gap-4">
-            {project.code && (
+            {project.codeLink && (
               <a
-                href={project.code}
+                href={project.codeLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition"
@@ -93,7 +93,7 @@ export default function ProjectCard({ project, index }) {
             )}
             {project.live && (
               <a
-                href={project.live}
+                href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-green-400 hover:text-green-200 transition"
