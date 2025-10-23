@@ -29,11 +29,23 @@ export default function Contact() {
             opacity: { value: 0.2 },
             size: { value: { min: 2, max: 4 } },
             move: { enable: true, speed: 1.5, outModes: "bounce" },
-            links: { enable: true, distance: 120, color: "#4f46e5", opacity: 0.1, width: 1 },
+            links: {
+              enable: true,
+              distance: 120,
+              color: "#4f46e5",
+              opacity: 0.1,
+              width: 1,
+            },
           },
           interactivity: {
-            events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },
-            modes: { repulse: { distance: 80, duration: 0.4 }, push: { quantity: 4 } },
+            events: {
+              onHover: { enable: true, mode: "repulse" },
+              onClick: { enable: true, mode: "push" },
+            },
+            modes: {
+              repulse: { distance: 80, duration: 0.4 },
+              push: { quantity: 4 },
+            },
           },
         }}
         className="absolute top-0 left-0 w-full h-full -z-10"
@@ -46,16 +58,20 @@ export default function Contact() {
         viewport={{ once: true }}
         className="max-w-5xl mx-auto relative z-10"
       >
-        <h2 className="text-4xl font-bold text-blue-400 text-center mb-8">Contact Me</h2>
+        <h2 className="text-4xl font-bold text-blue-400 text-center mb-8">
+          Contact Me
+        </h2>
         <p className="text-gray-300 text-center mb-8">
-          I’m open to collaborations, freelance work, or internship opportunities. Feel free to reach out via email, social platforms, or using the contact form below.
+          I’m open to collaborations, freelance work, or internship
+          opportunities. Feel free to reach out via email, social platforms, or
+          using the contact form below.
         </p>
 
         <div className="flex flex-col md:flex-row gap-12">
           {/* Left Side: Contact Info */}
           <div className="flex-1 flex flex-col items-center md:items-start gap-6">
             <a
-              href="mailto:sriram@example.com"
+              href="mailto:sriram0607@gmail.com?subject=Collaboration%20Opportunity&body=Hi%20Sriram,%0A%0AI%20am%20reaching%20out%20to%20you%20for%20a%20collaboration%20opportunity.%0A%0A%0APlease%20let%20me%20know%20if%20you%27re%20interested%20and%20available.%0A%0A%0AThanks%2C%20Sriram"
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg text-white font-semibold"
             >
               Email Me
@@ -63,9 +79,15 @@ export default function Contact() {
 
             <div className="flex gap-6 text-gray-300 mt-4">
               <Icon type="github" href="https://github.com/heyshreee" />
-              <Icon type="linkedin" href="https://linkedin.com/in/yourprofile" />
-              <Icon type="twitter" href="https://twitter.com/yourprofile" />
-              <Icon type="instagram" href="https://instagram.com/yourprofile" />
+              <Icon
+                type="linkedin"
+                href="https://linkedin.com/in/sriram-sriram-41b52532b"
+              />
+              <Icon type="twitter" href="https://x.com/srishree0607" />
+              <Icon
+                type="instagram"
+                href="https://www.instagram.com/wtf._shr"
+              />
             </div>
           </div>
 

@@ -82,9 +82,9 @@ export default function Hero() {
 
         <div className="flex justify-start gap-6 mt-4">
           <Icon type="github" href="https://github.com/heyshreee" />
-          <Icon type="linkedin" href="https://linkedin.com/in/yourprofile" />
-          <Icon type="twitter" href="https://twitter.com/yourprofile" />
-          <Icon type="instagram" href="https://instagram.com/yourprofile" />
+          <Icon type="linkedin" href="https://linkedin.com/in/sriram-sriram-41b52532b" />
+          <Icon type="twitter" href="https://x.com/srishree0607" />
+          <Icon type="instagram" href="https://www.instagram.com/wtf._shr" />
         </div>
       </motion.div>
 

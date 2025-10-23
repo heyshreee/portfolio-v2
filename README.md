@@ -1,21 +1,45 @@
-<<<<<<< HEAD
-# React + Vite
+# Portfolio v2 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, animated portfolio built with React + Vite, showcasing projects loaded from a backend API. Smooth interactions, dynamic project cards, and live counters for likes and views. 💫
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Visit the site: https://project-obs-v2.netlify.app/
 
-## React Compiler
+## 🖼️ Screenshot
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+![App Screenshot](src/assets/screenshot.png)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# portfolio-v2
-data manager using Express.js and json file 
->>>>>>> b21622a1684110825e08afff2ef3f9ad0b894215
+- **Dynamic Projects** fetched from API
+- **Like & View Counters** with cooldown handling ⏳
+- **View Tracking** on code/live clicks and likes 👀
+- **Load More** pagination for projects ➕
+- **Responsive UI** with motion effects and glassmorphism 🎨
+- **Date Formatting** (dd/mm/yyyy) for project dates 📅
+
+## 🛠️ Tech Stack
+
+- React + Vite ⚡
+- Tailwind CSS 💎
+- Framer Motion 🎞️
+- Axios 🌐
+
+## ▶️ Run Locally
+
+```bash
+git clone https://github.com/heyshreee/portfolio-v2.git
+cd portfolio-v2
+npm install
+npm run dev
+```
+
+## 🌐 Environment
+
+- API base: `https://project-management-mdb.onrender.com/api/v1/projects`
+- Live site: `https://project-obs-v2.netlify.app/`
+
+---
+
+Made with ❤️ by Sriram
