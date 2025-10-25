@@ -5,11 +5,15 @@ A modern, animated portfolio built with React + Vite, showcasing projects loaded
 ## 🔗 Live Demo
 
 - Visit the site: https://project-obs-v2.netlify.app/
+- [Visit my API](https://project-management-mdb.onrender.com)
+- [Dashboard](https://project-management-mdb.onrender.com/admin-dashboard)
+
+- only access by admin https://project-management-mdb.onrender.com/admin-login
 
 ## 🖼️ Screenshot
 
 ![App Screenshot](src/assets/screenshot.png)
-![Api](https://project-management-mdb.onrender.com)
+
 
 ## ✨ Features
 
