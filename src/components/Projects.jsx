@@ -8,6 +8,7 @@ export default function Projects() {
 
   useEffect(() => {
     fetch("https://project-management-mdb.onrender.com/api/v1/projects")
+    // fetch("http://localhost:3000/api/v1/projects")
       .then((res) => res.json())
       .then((data) => setProjects(data.data))
       .catch((err) => console.error("Error fetching projects:", err))

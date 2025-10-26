@@ -25,6 +25,7 @@ export default function ProjectCard({ project, index }) {
       setViews((v) => v + 1);
       await axios.post(
         `https://project-management-mdb.onrender.com/api/v1/projects/${project._id}/view`,
+        // `http://localhost:3000/api/v1/projects/${project._id}/view`,
         source ? { source } : {},
         { headers: { "Content-Type": "application/json" } }
       );
@@ -41,6 +42,7 @@ export default function ProjectCard({ project, index }) {
       const action = liked === true ? "dislike" : "like";
       const res = await axios.put(
         `https://project-management-mdb.onrender.com/api/v1/projects/${project._id}/like`,
+        // `http://localhost:3000/api/v1/projects/${project._id}/like`,
         { action },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -48,10 +50,11 @@ export default function ProjectCard({ project, index }) {
       setLiked(action === "like" ? true : null);
       setTotalLikes(res.data.likesCount); // updated total likes from backend
       // Count like as a view interaction as requested
-      await incrementViews("like");
+      // await incrementViews("like");
     } catch (err) {
       if (err.response?.status === 429) {
-        setCooldownMsg(err.response.data?.message || "You can like/dislike again in a few seconds");
+        const timeoutId = setTimeout(() => setCooldownMsg(""), 10000);
+        setCooldownMsg(<div className="absolute top-0 right-0 p-2 bg-red-500 text-white rounded-full">{err.response.data?.message || "You can like/dislike again in a few seconds"}</div>);
         setTimeout(() => setCooldownMsg(""), 10000);
       } else {
         console.error(err);

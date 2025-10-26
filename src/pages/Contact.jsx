@@ -4,7 +4,43 @@ import { loadFull } from "tsparticles";
 import Pattern from "../components/Pattern";
 import Icon from "../components/Icon";
 
+import { useState } from "react";
+
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(null);
+    try {
+      const res = await fetch("https://project-management-mdb.onrender.com/api/v1/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await res.json();
+      setSuccess(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+
+    } catch (err) {
+      console.error("Submission error:", err);
+      setSuccess(false);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const particlesInit = async (main) => {
     await loadFull(main);
   };
@@ -93,31 +129,50 @@ export default function Contact() {
 
           {/* Right Side: Contact Form */}
           <div className="flex-1 bg-gray-800 rounded-lg p-6 shadow-lg">
-            <form className="flex flex-col gap-4">
+            <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Your Name"
+                value={name}
+                id="name"
+                onChange={(e) => setName(e.target.value)}
                 className="p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
               <input
                 type="email"
                 placeholder="Your Email"
+                value={email}
+                id="email"
+                onChange={(e) => setEmail(e.target.value)}
                 className="p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
+
               <textarea
                 placeholder="Your Message"
+                value={message}
+                id="message"
+                onChange={(e) => setMessage(e.target.value)}
                 className="p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                 rows={5}
                 required
               />
               <button
                 type="submit"
+                disabled={loading}
                 className="bg-blue-600 hover:bg-blue-700 transition text-white font-semibold py-3 rounded-md"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Submit"}
               </button>
+              {success === true && (
+                <p className="text-green-400 mt-2">Submitted successfully!</p>
+              )}
+              {success === false && (
+                <p className="text-red-400 mt-2">
+                  Submission failed. Try again.
+                </p>
+              )}
             </form>
           </div>
         </div>
