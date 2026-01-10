@@ -1,4 +1,11 @@
-import { Github, ExternalLink, Calendar, ThumbsUp, ThumbsDown, ImageOff } from "lucide-react";
+import {
+  Github,
+  ExternalLink,
+  Calendar,
+  ThumbsUp,
+  ThumbsDown,
+  ImageOff,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import axios from "axios";
@@ -54,7 +61,12 @@ export default function ProjectCard({ project, index }) {
     } catch (err) {
       if (err.response?.status === 429) {
         const timeoutId = setTimeout(() => setCooldownMsg(""), 10000);
-        setCooldownMsg(<div className="absolute top-0 right-0 p-2 bg-red-500 text-white rounded-full">{err.response.data?.message || "You can like/dislike again in a few seconds"}</div>);
+        setCooldownMsg(
+          <div className="absolute top-0 right-0 p-2 bg-red-500 text-white rounded-full">
+            {err.response.data?.message ||
+              "You can like/dislike again in a few seconds"}
+          </div>
+        );
         setTimeout(() => setCooldownMsg(""), 10000);
       } else {
         console.error(err);
@@ -73,7 +85,7 @@ export default function ProjectCard({ project, index }) {
   //   }
   // };
 
-  const hasImage = project.imageLink && project.imageLink.trim() !== "";
+  const hasImage = project.imageUrl && project.imageUrl.trim() !== "";
 
   return (
     <motion.div
@@ -94,7 +106,7 @@ export default function ProjectCard({ project, index }) {
       <div className="relative h-48 w-full overflow-hidden">
         {hasImage ? (
           <img
-            src={project.imageLink}
+            src={project.imageUrl}
             alt={project.title}
             className="object-cover h-full w-full rounded-t-2xl group-hover:scale-105 transition-transform duration-700"
           />
@@ -134,7 +146,11 @@ export default function ProjectCard({ project, index }) {
                 onClick={async (e) => {
                   e.preventDefault();
                   await incrementViews("code");
-                  window.open(project.codeUrl || project.codeLink, "_blank", "noopener,noreferrer");
+                  window.open(
+                    project.codeUrl || project.codeLink,
+                    "_blank",
+                    "noopener,noreferrer"
+                  );
                 }}
                 className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition"
               >
@@ -149,7 +165,11 @@ export default function ProjectCard({ project, index }) {
                 onClick={async (e) => {
                   e.preventDefault();
                   await incrementViews("live");
-                  window.open(project.liveUrl || project.liveLink, "_blank", "noopener,noreferrer");
+                  window.open(
+                    project.liveUrl || project.liveLink,
+                    "_blank",
+                    "noopener,noreferrer"
+                  );
                 }}
                 className="flex items-center gap-2 text-green-400 hover:text-green-200 transition"
               >
@@ -168,7 +188,9 @@ export default function ProjectCard({ project, index }) {
                 liked === true
                   ? "bg-blue-600 text-white"
                   : "bg-white/10 text-gray-300 hover:bg-blue-500/20"
-              } ${isLiking || !!cooldownMsg ? "opacity-50 cursor-not-allowed" : ""}`}
+              } ${
+                isLiking || !!cooldownMsg ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
               <ThumbsUp size={18} />
             </motion.button>
@@ -185,10 +207,14 @@ export default function ProjectCard({ project, index }) {
               <ThumbsDown size={18} />
             </motion.button> */}
 
-            <span className="ml-1 text-gray-200 text-sm font-medium">{totalLikes}</span>
+            <span className="ml-1 text-gray-200 text-sm font-medium">
+              {totalLikes}
+            </span>
             <span className="ml-3 text-gray-400 text-sm">Views: {views}</span>
             {cooldownMsg && (
-              <span className="ml-3 text-xs text-yellow-400">{cooldownMsg}</span>
+              <span className="ml-3 text-xs text-yellow-400">
+                {cooldownMsg}
+              </span>
             )}
           </div>
         </div>
