@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import profilePic from "../assets/profile.png";
+import profilePic from "https://avatars.githubusercontent.com/u/206909485?v=4";
 import Icon from "../components/Icon";
 
 export default function Hero() {
