@@ -74,16 +74,7 @@ export default function ProjectCard({ project, index }) {
     } finally {
       setIsLiking(false);
     }
-  };
-
-  // const handleDislike = async () => {
-  //   try {
-  //     if (liked === true) await handleLike(); // remove like
-  //     setLiked(false);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
+  }
 
   const hasImage = project.imageUrl && project.imageUrl.trim() !== "";
 
@@ -152,9 +143,9 @@ export default function ProjectCard({ project, index }) {
                     "noopener,noreferrer"
                   );
                 }}
-                className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition"
+                className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition "
               >
-                <Github size={18} /> Code
+                <Github size={14} /> Code
               </a>
             )}
             {(project.liveUrl || project.liveLink) && (
@@ -173,7 +164,7 @@ export default function ProjectCard({ project, index }) {
                 }}
                 className="flex items-center gap-2 text-green-400 hover:text-green-200 transition"
               >
-                <ExternalLink size={18} /> Live
+                <ExternalLink size={14} /> Live
               </a>
             )}
           </div>
@@ -192,7 +183,7 @@ export default function ProjectCard({ project, index }) {
                 isLiking || !!cooldownMsg ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >
-              <ThumbsUp size={18} />
+              <ThumbsUp size={14} />
             </motion.button>
 
             {/* <motion.button
@@ -204,7 +195,7 @@ export default function ProjectCard({ project, index }) {
                   : "bg-white/10 text-gray-300 hover:bg-red-500/20"
               }`}
             >
-              <ThumbsDown size={18} />
+              <ThumbsDown size={14} />
             </motion.button> */}
 
             <span className="ml-1 text-gray-200 text-sm font-medium">

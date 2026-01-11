@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import Pattern from "../components/Pattern";
 import Icon from "../components/Icon";
 
 import { useState } from "react";
@@ -50,8 +49,6 @@ export default function Contact() {
       id="contact"
       className="relative py-16 px-6 text-white overflow-hidden"
     >
-      {/* Background */}
-      <Pattern />
       <Particles
         id="contact-particles"
         init={particlesInit}

@@ -1,105 +1,56 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter } from "lucide-react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import React from "react";
+import { ArrowRight, ShieldCheck, Terminal } from "lucide-react";
 import profilePic from "../assets/profile.png";
-import Icon from "../components/Icon";
 
 export default function Hero() {
-  const [greeting, setGreeting] = useState("");
-
-  useEffect(() => {
-    const hour = new Date().getHours();
-    if (hour < 12) setGreeting("Good Morning");
-    else if (hour < 18) setGreeting("Good Afternoon");
-    else setGreeting("Good Evening");
-  }, []);
-
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
-
   return (
-    <section
-      id="hero"
-      className="relative min-h-[90vh] flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-20 bg-transparent overflow-hidden"
-    >
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          fullScreen: { enable: false },
-          fpsLimit: 60,
-          particles: {
-            number: { value: 50, density: { enable: true, area: 800 } },
-            color: { value: "#4f46e5" },
-            shape: { type: "circle" },
-            opacity: { value: 0.3 },
-            size: { value: { min: 2, max: 4 } },
-            move: { enable: true, speed: 1.5, outModes: "bounce" },
-            links: {
-              enable: true,
-              distance: 120,
-              color: "#4f46e5",
-              opacity: 0.2,
-              width: 1,
-            },
-          },
-          interactivity: {
-            events: {
-              onHover: { enable: true, mode: "repulse" },
-              onClick: { enable: true, mode: "push" },
-            },
-            modes: {
-              repulse: { distance: 80, duration: 0.4 },
-              push: { quantity: 4 },
-            },
-          },
-        }}
-        className="absolute top-0 left-0 w-full h-full -z-10"
-      />
-
-      <motion.div
-        className="flex-1 text-center md:text-left z-10"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-4">
-          {greeting}, I'm Sriram 👋
-        </h1>
-        <p className="text-gray-300 text-lg md:text-xl mb-6 max-w-lg mx-auto md:mx-0">
-          I'm a Cyber Security student passionate about building secure,
-          efficient systems and developing full-stack applications.
-        </p>
-        <a
-          href="#projects"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-transform hover:scale-105"
-        >
-          View My Work
-        </a>
-
-        <div className="flex justify-start gap-6 mt-4">
-          <Icon type="github" href="https://github.com/heyshreee" />
-          <Icon type="linkedin" href="https://linkedin.com/in/sriram-sriram-41b52532b" />
-          <Icon type="twitter" href="https://x.com/srishree0607" />
-          <Icon type="instagram" href="https://www.instagram.com/wtf._shr" />
+    <section className="relative min-h-screen pt-20 grid-bg overflow-hidden flex items-center" id="home">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-xl font-semibold text-primary tracking-wide uppercase">Welcome to my universe</h2>
+            <h1 className="text-6xl md:text-7xl font-extrabold leading-tight">
+              Hi, I'm <span className="text-primary">Sriram</span> 👋
+            </h1>
+            <div className="inline-block">
+              <p className="typing-effect text-2xl md:text-3xl font-medium text-slate-600 dark:text-slate-400">
+                Cyber Security Student
+              </p>
+            </div>
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+              I'm a Cyber Security student passionate about building secure, efficient systems and developing full-stack applications.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-4">
+            <a className="px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/25 hover:translate-y-[-2px] transition-all flex items-center gap-2" href="#projects">
+              Explore My Work
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <a className="px-8 py-4 glass-card font-bold rounded-xl hover:bg-white/10 dark:hover:bg-slate-800/50 transition-all text-slate-900 dark:text-white" href="#contact">
+              Get In Touch
+            </a>
+          </div>
+          {/* Preserving social icons from original design if needed, or we can leave them out to strictly match reference. 
+              The reference has social icons in the footer. I will leave them out here to match the reference design exactly as requested. */}
         </div>
-      </motion.div>
 
-      <motion.div
-        className="flex-1 mb-10 md:mb-0 flex justify-center z-10"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <img
-          src={profilePic}
-          alt="Sriram"
-          className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg border-4 border-blue-400"
-        />
-      </motion.div>
+        <div className="relative flex justify-center items-center">
+          <div className="relative w-80 h-80 md:w-96 md:h-96 hex-glow">
+            <div className="absolute inset-0 bg-primary/20 animate-pulse rotate-45 rounded-[60px] border-4 border-primary/30"></div>
+            <div className="absolute inset-4 bg-background-dark dark:bg-slate-900 rotate-12 rounded-[50px] border-2 border-primary shadow-[0_0_30px_rgba(37,99,235,0.3)]"></div>
+            <div className="absolute inset-6 rounded-[40px] overflow-hidden border-2 border-primary/20 grayscale hover:grayscale-0 transition-all duration-700">
+              <img alt="Sriram Profile" className="w-full h-full object-cover" src={profilePic} />
+            </div>
+            <div className="absolute -top-4 -right-4 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl animate-bounce">
+              <ShieldCheck className="text-primary w-8 h-8" />
+            </div>
+            <div className="absolute -bottom-2 -left-4 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl animate-bounce" style={{ animationDelay: "1s" }}>
+              <Terminal className="text-primary w-8 h-8" />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sriram | Cyber Security &amp; Full-Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              "background-light": "#f8fafc",
+              "background-dark": "#020617",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "12px",
+            },
+            backgroundImage: {
+              "grid-pattern":
+                "radial-gradient(circle, rgba(37, 99, 235, 0.1) 1px, transparent 1px)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .grid-bg {
+        background-image: radial-gradient(#1e293b 1px, transparent 1px);
+        background-size: 30px 30px;
+      }
+      .dark .grid-bg {
+        background-image: radial-gradient(#1e293b 1px, transparent 1px);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .hex-glow {
+        filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.4));
+      }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      .typing-effect {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 3px solid #2563eb;
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #2563eb;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300"
+  >
+    <nav
+      class="fixed top-0 w-full z-50 glass-card dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <div class="text-2xl font-extrabold tracking-tight text-primary">
+          SRIRAM
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a class="hover:text-primary transition-colors" href="#home">Home</a>
+          <a class="hover:text-primary transition-colors" href="#projects"
+            >Projects</a
+          >
+          <a class="hover:text-primary transition-colors" href="#skills"
+            >Skills</a
+          >
+          <a class="hover:text-primary transition-colors" href="#about"
+            >About</a
+          >
+          <a
+            class="px-5 py-2.5 bg-primary text-white rounded-full hover:bg-blue-700 transition-all font-semibold"
+            href="#contact"
+            >Contact Me</a
+          >
+        </div>
+        <button
+          class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          onclick="document.documentElement.classList.toggle('dark')"
+        >
+          <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+          <span class="material-symbols-outlined hidden dark:block"
+            >light_mode</span
+          >
+        </button>
+      </div>
+    </nav>
+    <section
+      class="relative min-h-screen pt-20 grid-bg overflow-hidden flex items-center"
+      id="home"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 blur-[120px] rounded-full pointer-events-none"
+      ></div>
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10"
+      >
+        <div class="space-y-8">
+          <div class="space-y-4">
+            <h2
+              class="text-xl font-semibold text-primary tracking-wide uppercase"
+            >
+              Welcome to my universe
+            </h2>
+            <h1 class="text-6xl md:text-7xl font-extrabold leading-tight">
+              Hi, I'm <span class="text-primary">Sriram</span> 👋
+            </h1>
+            <div class="inline-block">
+              <p
+                class="typing-effect text-2xl md:text-3xl font-medium text-slate-600 dark:text-slate-400"
+              >
+                Cyber Security Specialist
+              </p>
+            </div>
+            <p
+              class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed"
+            >
+              I build secure, efficient systems and craft high-performance
+              full-stack applications with a focus on defense-in-depth
+              architecture.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a
+              class="px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/25 hover:translate-y-[-2px] transition-all flex items-center gap-2"
+              href="#projects"
+            >
+              Explore My Work
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+            <a
+              class="px-8 py-4 glass-card font-bold rounded-xl hover:bg-white/10 dark:hover:bg-slate-800/50 transition-all"
+              href="#contact"
+            >
+              Get In Touch
+            </a>
+          </div>
+          <div class="flex items-center gap-6 pt-4">
+            <a
+              class="text-slate-400 hover:text-primary transition-all scale-110"
+              href="#"
+            >
+              <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="text-slate-400 hover:text-primary transition-all scale-110"
+              href="#"
+            >
+              <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="text-slate-400 hover:text-primary transition-all scale-110"
+              href="#"
+            >
+              <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="relative flex justify-center items-center">
+          <div class="relative w-80 h-80 md:w-96 md:h-96 hex-glow">
+            <div
+              class="absolute inset-0 bg-primary/20 animate-pulse rotate-45 rounded-[60px] border-4 border-primary/30"
+            ></div>
+            <div
+              class="absolute inset-4 bg-background-dark dark:bg-slate-900 rotate-12 rounded-[50px] border-2 border-primary shadow-[0_0_30px_rgba(37,99,235,0.3)]"
+            ></div>
+            <div
+              class="absolute inset-6 rounded-[40px] overflow-hidden border-2 border-primary/20 grayscale hover:grayscale-0 transition-all duration-700"
+            >
+              <img
+                alt="Sriram Profile"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ94_2VnWJ-Vl1BS7eTOY3n7xuuBgT0mGuHvfM2a1R0jN4tnsxQmPzF_6OkbmwGIHbiFLIeTL1wc5W0RZuMuh6fAna-ilvmH5WfGQT_hsvvLxFojvPQqSwAG9RuLlhQlir8qwWbsCIzjOO86EhIvZM640PECpPiFsF5jrm0g2COqUx1VIfU_B0AGU7NV2p6BcnXxH0A4cPPIVp2HjZosplXEoBslXRKpTB2URVksUGdDfk-7h4dx24lZOD5oQz11v1wmQlHtG5tCE"
+              />
+            </div>
+            <div
+              class="absolute -top-4 -right-4 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl animate-bounce"
+            >
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >verified_user</span
+              >
+            </div>
+            <div
+              class="absolute -bottom-2 -left-4 p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-xl animate-bounce"
+              style="animation-delay: 1s"
+            >
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >terminal</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 bg-slate-50 dark:bg-slate-900/50" id="projects">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center space-y-4 mb-16">
+          <h2 class="text-4xl font-bold">
+            Featured <span class="text-primary">Projects</span>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Explore some of my recent work in web development and security
+            analysis.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="group bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500"
+          >
+            <div
+              class="h-52 bg-slate-100 dark:bg-slate-700 relative overflow-hidden"
+            >
+              <img
+                alt="E-Commerce Project"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWBFRqzDIsXV_8sKSvrBwpOj1_FLzi30yb0P6Llc3YHb6ri9enim0YFhnyfLnVWzyq44hDx_RwhzY1QDAMsEBY5C0cNX7lf1v_FHZuXgmhNEZ2XqjF-3RUNBaWUczj9ofEecFdfQ27YgeD7Ll77HIysu_MW042PKbDB5MIaqCIthKUfqGkILR08xgH_0iDIGy83OoIY-_ePK0244xoygmp--H71F8d9tEX5hsHa06NuKGcR3KbNGm1vf94e_H-_RMBR2_hpghza1w"
+              />
+            </div>
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold">E-Commerce Platform</h3>
+                <span
+                  class="text-xs font-semibold px-3 py-1 bg-primary/10 text-primary rounded-full"
+                  >Full Stack</span
+                >
+              </div>
+              <p
+                class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+              >
+                A modern MERN stack store with secure payment integration and
+                real-time inventory.
+              </p>
+              <div class="flex items-center justify-between pt-4">
+                <div class="flex gap-4">
+                  <a
+                    class="flex items-center gap-1 text-sm font-semibold hover:text-primary transition-colors"
+                    href="#"
+                  >
+                    <span class="material-symbols-outlined text-lg">code</span>
+                    Code
+                  </a>
+                  <a
+                    class="flex items-center gap-1 text-sm font-semibold hover:text-primary transition-colors"
+                    href="#"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >visibility</span
+                    >
+                    Live
+                  </a>
+                </div>
+                <div class="flex items-center gap-1 text-slate-500 text-sm">
+                  <span class="material-symbols-outlined text-lg"
+                    >thumb_up</span
+                  >
+                  12
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="group bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500"
+          >
+            <div
+              class="h-52 bg-slate-100 dark:bg-slate-700 relative overflow-hidden"
+            >
+              <img
+                alt="Analyzer Project"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Uv0jisB53jlmiYIwPIEqf6dgRwoIx9jh_7LBA72UNOwAXqrKTYWwA33ulgB65WqNgkjDGb1bUGI1oGtGcqSuBMwpwCxYCkXmODi-VFjmmRXrximzvHsi8Q3h3TrmYWq-PkmISsSb8Hn_kUM6YjEpX24jg5cSvw7ok92rYyJzhohqPeKc9ytPvw2Ou0sWRen6tQ4-3ZhTcEOa339tWckbe8-cvIxXSq4iB1U29Kcb7YOobnxu8kPkZlJnW4659WxYLqUPVjLxe50"
+              />
+            </div>
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold">Header Analyzer</h3>
+                <span
+                  class="text-xs font-semibold px-3 py-1 bg-green-500/10 text-green-500 rounded-full"
+                  >Security</span
+                >
+              </div>
+              <p
+                class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+              >
+                Python-based HTTP security header analysis tool for
+                vulnerability assessment.
+              </p>
+              <div class="flex items-center justify-between pt-4">
+                <div class="flex gap-4">
+                  <a
+                    class="flex items-center gap-1 text-sm font-semibold hover:text-primary transition-colors"
+                    href="#"
+                  >
+                    <span class="material-symbols-outlined text-lg">code</span>
+                    Code
+                  </a>
+                  <a
+                    class="flex items-center gap-1 text-sm font-semibold hover:text-primary transition-colors"
+                    href="#"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >visibility</span
+                    >
+                    Live
+                  </a>
+                </div>
+                <div class="flex items-center gap-1 text-slate-500 text-sm">
+                  <span class="material-symbols-outlined text-lg"
+                    >thumb_up</span
+                  >
+                  24
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="group bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500"
+          >
+            <div
+              class="h-52 bg-slate-100 dark:bg-slate-700 relative overflow-hidden"
+            >
+              <img
+                alt="Weather Project"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh0M7KOjyE-ztuyktL2IBt-1enFIYQy9bg537SBlfMVFtTR2scHz7ngNjIiillDHPp7KedHiVSNjrqgPuE35K1m05Hy0iv60Wvq_xglWt8L18lIj0tVqhyeCybn8IJsdx0TL0xr4x8uM-mhaow5CtAleXfJsgxl6CjboD4aj2ybalkJILLfWi4JMsrdz_NX_hfCXxSaLxn7W6BT9c7j-lZ5g4Du3XPtoOu_pUNBwDVFYpjfVwQG0iVF1VNNsvMb7qGwxb4s39b99I"
+              />
+            </div>
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold">WeatherMood</h3>
+                <span
+                  class="text-xs font-semibold px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full"
+                  >UI/UX</span
+                >
+              </div>
+              <p
+                class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+              >
+                A contextual weather app that changes theme based on local
+                conditions.
+              </p>
+              <div class="flex items-center justify-between pt-4">
+                <div class="flex gap-4">
+                  <a
+                    class="flex items-center gap-1 text-sm font-semibold hover:text-primary transition-colors"
+                    href="#"
+                  >
+                    <span class="material-symbols-outlined text-lg">code</span>
+                    Code
+                  </a>
+                  <a
+                    class="flex items-center gap-1 text-sm font-semibold hover:text-primary transition-colors"
+                    href="#"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >visibility</span
+                    >
+                    Live
+                  </a>
+                </div>
+                <div class="flex items-center gap-1 text-slate-500 text-sm">
+                  <span class="material-symbols-outlined text-lg"
+                    >thumb_up</span
+                  >
+                  18
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24" id="skills">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">
+          Technical <span class="text-primary">Skills</span>
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div
+            class="glass-card dark:bg-slate-800/30 p-8 rounded-3xl space-y-8"
+          >
+            <h3 class="text-2xl font-bold flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary"
+                >palette</span
+              >
+              Frontend Development
+            </h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
+              <div
+                class="space-y-3 p-4 rounded-2xl bg-white/5 dark:bg-white/5 border border-white/10"
+              >
+                <div class="text-4xl font-bold text-primary">Re</div>
+                <p class="text-sm font-medium">React.js</p>
+              </div>
+              <div
+                class="space-y-3 p-4 rounded-2xl bg-white/5 dark:bg-white/5 border border-white/10"
+              >
+                <div class="text-4xl font-bold text-primary">Tw</div>
+                <p class="text-sm font-medium">Tailwind CSS</p>
+              </div>
+              <div
+                class="space-y-3 p-4 rounded-2xl bg-white/5 dark:bg-white/5 border border-white/10"
+              >
+                <div class="text-4xl font-bold text-primary">Js</div>
+                <p class="text-sm font-medium">JavaScript</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="glass-card dark:bg-slate-800/30 p-8 rounded-3xl space-y-8"
+          >
+            <h3 class="text-2xl font-bold flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary"
+                >security</span
+              >
+              Security &amp; Backend
+            </h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
+              <div
+                class="space-y-3 p-4 rounded-2xl bg-white/5 dark:bg-white/5 border border-white/10"
+              >
+                <div class="text-4xl font-bold text-primary">No</div>
+                <p class="text-sm font-medium">Node.js</p>
+              </div>
+              <div
+                class="space-y-3 p-4 rounded-2xl bg-white/5 dark:bg-white/5 border border-white/10"
+              >
+                <div class="text-4xl font-bold text-primary">Py</div>
+                <p class="text-sm font-medium">Python</p>
+              </div>
+              <div
+                class="space-y-3 p-4 rounded-2xl bg-white/5 dark:bg-white/5 border border-white/10"
+              >
+                <div class="text-4xl font-bold text-primary">Sc</div>
+                <p class="text-sm font-medium">SecOps</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 bg-slate-50 dark:bg-slate-900/50" id="about">
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+      >
+        <div class="relative">
+          <div
+            class="relative aspect-square glass-card rounded-3xl overflow-hidden border-2 border-primary/20 p-8"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"
+            ></div>
+            <div
+              class="relative h-full flex flex-col items-center justify-center space-y-6 text-center"
+            >
+              <div
+                class="w-32 h-32 rounded-full bg-primary/10 border-4 border-primary flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-6xl text-primary"
+                  >person_search</span
+                >
+              </div>
+              <div>
+                <h3 class="text-3xl font-bold">Sriram</h3>
+                <p class="text-primary font-semibold">Cyber Security Student</p>
+              </div>
+              <div class="flex gap-2 flex-wrap justify-center">
+                <span
+                  class="px-4 py-2 bg-primary/10 rounded-full text-xs font-bold"
+                  >Pentesting</span
+                >
+                <span
+                  class="px-4 py-2 bg-primary/10 rounded-full text-xs font-bold"
+                  >Full-Stack</span
+                >
+                <span
+                  class="px-4 py-2 bg-primary/10 rounded-full text-xs font-bold"
+                  >UI/UX</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-8">
+          <h2 class="text-4xl font-bold">
+            About <span class="text-primary">Me</span>
+          </h2>
+          <div
+            class="space-y-4 text-slate-600 dark:text-slate-400 text-lg leading-relaxed"
+          >
+            <p>
+              I'm
+              <span class="font-bold text-slate-900 dark:text-white"
+                >Sriram</span
+              >, a Cyber Security student with a passion for building secure,
+              efficient systems and full-stack web applications.
+            </p>
+            <p>
+              My interests include penetration testing, web development,
+              learning new technologies, and designing interfaces. I’m
+              constantly exploring ways to improve my skills and contribute to
+              meaningful projects.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div
+              class="p-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700"
+            >
+              <h4 class="text-2xl font-bold text-primary">2+</h4>
+              <p class="text-sm">Years Experience</p>
+            </div>
+            <div
+              class="p-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700"
+            >
+              <h4 class="text-2xl font-bold text-primary">15+</h4>
+              <p class="text-sm">Projects Done</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24" id="contact">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center space-y-4 mb-16">
+          <h2 class="text-4xl font-bold">
+            Contact <span class="text-primary">Me</span>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400">
+            Feel free to reach out via email, social platforms, or using the
+            contact form below.
+          </p>
+        </div>
+        <div
+          class="glass-card dark:bg-slate-800/30 p-8 md:p-12 rounded-[40px] border-2 border-white/5"
+        >
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-sm font-semibold px-1">Your Name</label>
+                <input
+                  class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-2xl p-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                  placeholder="John Doe"
+                  type="text"
+                />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-semibold px-1">Your Email</label>
+                <input
+                  class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-2xl p-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                  placeholder="john@example.com"
+                  type="email"
+                />
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-semibold px-1">Your Message</label>
+              <textarea
+                class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-2xl p-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                placeholder="Let's build something secure together..."
+                rows="5"
+              ></textarea>
+            </div>
+            <button
+              class="w-full py-5 bg-primary text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-2"
+              type="submit"
+            >
+              Send Message
+              <span class="material-symbols-outlined">send</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8"
+      >
+        <div class="text-2xl font-extrabold text-primary">SRIRAM</div>
+        <p class="text-slate-500 text-sm">
+          © 2024 Sriram. All Rights Reserved.
+        </p>
+        <div class="flex gap-6">
+          <a
+            class="text-slate-400 hover:text-primary transition-colors"
+            href="#"
+            ><span class="material-symbols-outlined">alternate_email</span></a
+          >
+          <a
+            class="text-slate-400 hover:text-primary transition-colors"
+            href="#"
+            ><span class="material-symbols-outlined">share</span></a
+          >
+          <a
+            class="text-slate-400 hover:text-primary transition-colors"
+            href="#"
+            ><span class="material-symbols-outlined">code</span></a
+          >
+        </div>
+      </div>
+    </footer>
+    <a
+      class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 hover:scale-110 transition-transform z-50"
+      href="#home"
+    >
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </a>
+  </body>
+</html>

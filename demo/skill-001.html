@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neural Skill Map | DevPortfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#050a15",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .hexagon {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+        .glow-pulse {
+            box-shadow: 0 0 20px rgba(19, 91, 236, 0.4);
+        }
+        .neural-line {
+            stroke-dasharray: 10;
+            stroke: rgba(19, 91, 236, 0.3);
+        }
+        .skill-pill {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(19, 91, 236, 0.3);
+        }
+        .skill-pill:hover {
+            box-shadow: 0 0 15px rgba(19, 91, 236, 0.6);
+            border-color: #135bec;
+            transform: translateY(-2px);
+        }
+        .bg-grid {
+            background-image: radial-gradient(circle, #135bec 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-white overflow-x-hidden min-h-screen">
+<div class="relative flex h-full min-h-screen w-full flex-col">
+<!-- Navigation Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-10 py-5 sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white">hub</span>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">SkillMapper</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Home</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Projects</a>
+<a class="text-primary text-sm font-medium" href="#">Neural Map</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Security</a>
+</nav>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-full h-11 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/80 transition-all">
+<span>Contact Me</span>
+</button>
+</div>
+</header>
+<main class="flex-1 relative flex flex-col items-center justify-center py-20 overflow-hidden">
+<!-- Background Decorations -->
+<div class="absolute inset-0 bg-grid pointer-events-none"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Page Title -->
+<div class="z-10 text-center mb-16">
+<h1 class="text-5xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">Neural Skill Architecture</h1>
+<p class="text-white/50 max-w-lg mx-auto text-lg">Visualizing the intersection of offensive security and modern full-stack engineering.</p>
+</div>
+<!-- Neural Map Container -->
+<div class="relative w-full max-w-[1200px] h-[700px] flex items-center justify-center">
+<!-- Central Core -->
+<div class="relative z-30 group cursor-default">
+<div class="hexagon w-48 h-56 bg-primary/20 backdrop-blur-xl border border-primary/50 flex flex-col items-center justify-center p-6 glow-pulse transition-transform duration-500 group-hover:scale-110">
+<span class="material-symbols-outlined text-5xl text-primary mb-2">security</span>
+<div class="text-center">
+<span class="block font-bold text-lg leading-tight uppercase tracking-widest">Lead</span>
+<span class="block font-light text-sm opacity-70 uppercase tracking-tighter">DevSecOps</span>
+</div>
+</div>
+<!-- Orbital Rings -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-primary/20 rounded-full animate-pulse"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-primary/10 rounded-full"></div>
+</div>
+<!-- Cluster: Full-Stack (Top Right) -->
+<div class="absolute top-10 right-20 flex flex-col items-start gap-4 z-20">
+<div class="px-4 py-1 bg-white/5 rounded-full border border-white/10 mb-2">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Frontend &amp; UI</span>
+</div>
+<div class="flex gap-3 flex-wrap max-w-[300px] justify-start">
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">React.js</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">TypeScript</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">Next.js</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">Tailwind</span>
+</div>
+</div>
+</div>
+<!-- Cluster: Offensive Security (Bottom Left) -->
+<div class="absolute bottom-10 left-20 flex flex-col items-end gap-4 z-20">
+<div class="px-4 py-1 bg-white/5 rounded-full border border-white/10 mb-2">
+<span class="text-xs font-bold uppercase tracking-widest text-red-500/80">Cyber Security</span>
+</div>
+<div class="flex gap-3 flex-wrap max-w-[350px] justify-end">
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5 border-red-500/20">
+<span class="material-symbols-outlined text-red-500 text-sm">terminal</span>
+<span class="text-sm font-medium">PenTesting</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">OWASP</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">Burp Suite</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">Metasploit</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">Kali</span>
+</div>
+</div>
+</div>
+<!-- Cluster: Backend (Top Left) -->
+<div class="absolute top-20 left-40 flex flex-col items-end gap-4 z-20">
+<div class="px-4 py-1 bg-white/5 rounded-full border border-white/10 mb-2">
+<span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Architecture</span>
+</div>
+<div class="flex gap-3 flex-wrap max-w-[280px] justify-end">
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">Node.js</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">Go</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">PostgreSQL</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">Redis</span>
+</div>
+</div>
+</div>
+<!-- Cluster: Cloud (Bottom Right) -->
+<div class="absolute bottom-20 right-40 flex flex-col items-start gap-4 z-20">
+<div class="px-4 py-1 bg-white/5 rounded-full border border-white/10 mb-2">
+<span class="text-xs font-bold uppercase tracking-widest text-amber-400">Infrastructure</span>
+</div>
+<div class="flex gap-3 flex-wrap max-w-[300px] justify-start">
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">AWS</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">Docker</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">Kubernetes</span>
+</div>
+<div class="skill-pill flex h-10 items-center justify-center gap-2 rounded-full bg-background-dark px-5">
+<span class="text-sm font-medium">CI/CD</span>
+</div>
+</div>
+</div>
+<!-- SVG Connections (Visual Only) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
+<!-- Top Left -->
+<path class="neural-line" d="M 600 350 Q 500 250 400 220" fill="none" stroke-width="1.5"></path>
+<!-- Top Right -->
+<path class="neural-line" d="M 600 350 Q 750 200 850 150" fill="none" stroke-width="1.5"></path>
+<!-- Bottom Left -->
+<path class="neural-line" d="M 600 350 Q 450 500 300 580" fill="none" stroke-width="1.5"></path>
+<!-- Bottom Right -->
+<path class="neural-line" d="M 600 350 Q 700 500 850 550" fill="none" stroke-width="1.5"></path>
+</svg>
+</div>
+<!-- Floating Proficiency Card (Simulation of interactive element) -->
+<div class="absolute bottom-10 right-10 z-40">
+<div class="bg-background-dark/80 backdrop-blur-xl border border-white/10 p-6 rounded-xl w-64 shadow-2xl">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 bg-primary/20 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div>
+<p class="text-xs uppercase tracking-widest text-white/50">Core Expertise</p>
+<p class="font-bold">Security Analysis</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span>Advanced PenTesting</span>
+<span class="text-primary">95%</span>
+</div>
+<div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[95%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span>Cloud Security</span>
+<span class="text-primary">88%</span>
+</div>
+<div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[88%]"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 border border-primary/30 rounded-lg text-xs font-bold hover:bg-primary transition-colors">VIEW ALL CERTIFICATIONS</button>
+</div>
+</div>
+<!-- Footer Meta Text -->
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 mt-12 px-4">
+<p class="text-[#9da6b9] text-sm font-normal leading-normal text-center">
+                    Hover over any node to explore the technical synergy between security protocols and application performance.
+                    <br/>This map is dynamically generated from real-world project deployments.
+                </p>
+</div>
+</main>
+<!-- Sidebar Navigation Elements (Vertical Dots) -->
+<div class="fixed left-8 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50">
+<div class="size-2 bg-white/20 rounded-full"></div>
+<div class="size-3 bg-primary rounded-full shadow-lg shadow-primary/50"></div>
+<div class="size-2 bg-white/20 rounded-full"></div>
+<div class="size-2 bg-white/20 rounded-full"></div>
+</div>
+</div>
+</body></html>
