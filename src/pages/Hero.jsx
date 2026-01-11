@@ -15,11 +15,11 @@ export default function Hero() {
             </h1>
             <div className="inline-block">
               <p className="typing-effect text-2xl md:text-3xl font-medium text-slate-600 dark:text-slate-400">
-                Cyber Security Specialist
+                Cyber Security Student
               </p>
             </div>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
-              I build secure, efficient systems and craft high-performance full-stack applications with a focus on defense-in-depth architecture.
+              I'm a Cyber Security student passionate about building secure, efficient systems and developing full-stack applications.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">

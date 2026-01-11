@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-
-
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -41,6 +39,10 @@ body {
 
 .hex-glow {
   filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.4));
+}
+
+.identity-card-glow {
+  box-shadow: 0 0 40px -10px rgba(37, 99, 235, 0.3);
 }
 
 @keyframes typing {
