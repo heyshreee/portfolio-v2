@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sriram | Lead DevSecOps &amp; Full-Stack Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+      :root {
+        --primary-neon: #06b6d4;
+        --secondary-neon: #3b82f6;
+        --deep-navy: #020617;
+        --grid-color: rgba(6, 182, 212, 0.05);
+      }
+      body {
+        background-color: var(--deep-navy);
+      }
+      .grid-bg {
+        background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+                          linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .typing-effect {
+        display: inline-block;
+        overflow: hidden;
+        border-right: 3px solid var(--primary-neon);
+        white-space: nowrap;
+        animation: typing 3.5s steps(30, end) infinite alternate, blink .75s step-end infinite;
+      }
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      @keyframes blink {
+        from, to { border-color: transparent }
+        50% { border-color: var(--primary-neon) }
+      }
+      .hex-container {
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      }
+      .neon-glow-pill {
+        box-shadow: 0 0 10px rgba(6, 182, 212, 0.2), inset 0 0 5px rgba(6, 182, 212, 0.1);
+        border: 1px solid rgba(6, 182, 212, 0.3);
+      }
+      .neon-glow-pill:hover {
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+        border: 1px solid var(--primary-neon);
+      }
+      .neural-line {
+        stroke: var(--primary-neon);
+        stroke-dasharray: 5;
+        opacity: 0.3;
+      }
+      .glass-morphism {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#06b6d4",
+              secondary: "#3b82f6",
+              navy: "#020617",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="font-display text-slate-100 selection:bg-primary/30">
+<nav class="fixed top-0 w-full z-50 glass-morphism border-b border-white/5">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SRIRAM</div>
+<div class="hidden md:flex items-center space-x-10 text-sm font-bold tracking-widest uppercase">
+<a class="hover:text-primary transition-colors" href="#home">Home</a>
+<a class="hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="px-6 py-2.5 bg-primary/10 border border-primary/30 text-primary rounded-full hover:bg-primary hover:text-white transition-all" href="#contact">Contact Me</a>
+</div>
+<button class="p-2 rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">shield_lock</span>
+</button>
+</div>
+</nav>
+<section class="relative min-h-screen pt-20 grid-bg overflow-hidden flex items-center" id="home">
+<div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/10 blur-[150px] rounded-full pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+<div class="space-y-10 order-2 lg:order-1">
+<div class="space-y-4">
+<h2 class="text-primary font-bold tracking-[0.3em] uppercase text-sm">System Architect &amp; Security Engineer</h2>
+<h1 class="text-6xl lg:text-8xl font-black leading-[1.1] tracking-tight">
+                    Hi, I'm <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">Sriram</span>
+</h1>
+<div class="block py-2">
+<p class="typing-effect text-2xl lg:text-4xl font-light text-primary/80">
+                        Cyber Security Specialist
+                    </p>
+</div>
+<p class="text-lg text-slate-400 max-w-xl leading-relaxed font-light">
+                    Redefining digital security through proactive architecture. I bridge the gap between high-performance full-stack development and defensive security operations.
+                </p>
+</div>
+<div class="flex flex-wrap gap-6">
+<a class="px-10 py-5 bg-primary text-navy font-black uppercase tracking-widest rounded-sm hover:bg-white hover:scale-105 transition-all shadow-[0_0_20px_rgba(6,182,212,0.4)]" href="#projects">
+                    Explore My Work
+                </a>
+<div class="flex items-center gap-6 px-4">
+<a class="text-slate-500 hover:text-primary transition-all scale-125" href="#"><svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg></a>
+<a class="text-slate-500 hover:text-primary transition-all scale-125" href="#"><svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+<a class="text-slate-500 hover:text-primary transition-all scale-125" href="#"><svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="relative flex justify-center items-center order-1 lg:order-2">
+<div class="relative w-80 h-80 lg:w-[450px] lg:h-[450px]">
+<div class="absolute inset-0 bg-primary/20 blur-[60px] animate-pulse"></div>
+<div class="absolute inset-0 border border-primary/30 hex-container rotate-12 scale-110"></div>
+<div class="absolute inset-0 border-2 border-primary/50 hex-container -rotate-6"></div>
+<div class="absolute inset-4 hex-container overflow-hidden group">
+<img alt="Sriram Profile" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ94_2VnWJ-Vl1BS7eTOY3n7xuuBgT0mGuHvfM2a1R0jN4tnsxQmPzF_6OkbmwGIHbiFLIeTL1wc5W0RZuMuh6fAna-ilvmH5WfGQT_hsvvLxFojvPQqSwAG9RuLlhQlir8qwWbsCIzjOO86EhIvZM640PECpPiFsF5jrm0g2COqUx1VIfU_B0AGU7NV2p6BcnXxH0A4cPPIVp2HjZosplXEoBslXRKpTB2URVksUGdDfk-7h4dx24lZOD5oQz11v1wmQlHtG5tCE"/>
+</div>
+<div class="absolute top-0 right-0 p-4 bg-navy border border-primary/40 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 relative bg-navy/80" id="skills">
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-24">
+<h2 class="text-primary font-bold tracking-[0.4em] uppercase text-sm mb-4">Architecture</h2>
+<h3 class="text-5xl font-black italic">Neural Skill <span class="text-primary">Map</span></h3>
+</div>
+<div class="relative h-[800px] w-full flex items-center justify-center">
+<svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<line class="neural-line" x1="50%" x2="25%" y1="50%" y2="25%"></line>
+<line class="neural-line" x1="50%" x2="75%" y1="50%" y2="25%"></line>
+<line class="neural-line" x1="50%" x2="25%" y1="50%" y2="75%"></line>
+<line class="neural-line" x1="50%" x2="75%" y1="50%" y2="75%"></line>
+<circle cx="25%" cy="25%" fill="var(--primary-neon)" opacity="0.5" r="4"></circle>
+<circle cx="75%" cy="25%" fill="var(--primary-neon)" opacity="0.5" r="4"></circle>
+<circle cx="25%" cy="75%" fill="var(--primary-neon)" opacity="0.5" r="4"></circle>
+<circle cx="75%" cy="75%" fill="var(--primary-neon)" opacity="0.5" r="4"></circle>
+</svg>
+<div class="absolute z-20 flex flex-col items-center">
+<div class="w-48 h-56 hex-container bg-primary/20 border-2 border-primary flex items-center justify-center text-center p-6 shadow-[0_0_50px_rgba(6,182,212,0.4)] group hover:scale-110 transition-transform">
+<div class="space-y-2">
+<span class="material-symbols-outlined text-4xl text-white">hub</span>
+<p class="font-black text-white leading-tight">Lead<br/>DevSecOps</p>
+</div>
+</div>
+</div>
+<div class="absolute top-[10%] left-[5%] lg:left-[15%] flex flex-col items-start gap-4">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+<span class="w-8 h-[1px] bg-primary"></span> Architecture
+                </h4>
+<div class="flex flex-wrap max-w-xs gap-3">
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">System Design</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Microservices</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Security Auditing</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Cloud Native</span>
+</div>
+</div>
+<div class="absolute top-[10%] right-[5%] lg:right-[15%] flex flex-col items-end gap-4 text-right">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+                    Frontend &amp; UI <span class="w-8 h-[1px] bg-primary"></span>
+</h4>
+<div class="flex flex-wrap max-w-xs gap-3 justify-end">
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">React.js</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Tailwind CSS</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Framer Motion</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Three.js</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Next.js</span>
+</div>
+</div>
+<div class="absolute bottom-[10%] left-[5%] lg:left-[15%] flex flex-col items-start gap-4">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+<span class="w-8 h-[1px] bg-primary"></span> Infrastructure
+                </h4>
+<div class="flex flex-wrap max-w-xs gap-3">
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Docker</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Kubernetes</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">AWS/GCP</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Terraform</span>
+</div>
+</div>
+<div class="absolute bottom-[10%] right-[5%] lg:right-[15%] flex flex-col items-end gap-4 text-right">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+                    Cyber Security <span class="w-8 h-[1px] bg-primary"></span>
+</h4>
+<div class="flex flex-wrap max-w-xs gap-3 justify-end">
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Pen-Testing</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Ethical Hacking</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">SIEM</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Cryptography</span>
+<span class="px-5 py-2 rounded-full text-xs font-bold neon-glow-pill glass-morphism">Burp Suite</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-navy border-y border-white/5" id="projects">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+<div class="space-y-4">
+<h2 class="text-primary font-bold tracking-[0.4em] uppercase text-sm">Case Studies</h2>
+<h3 class="text-5xl font-black">Featured <span class="text-primary">Deployments</span></h3>
+</div>
+<p class="text-slate-400 max-w-md font-light">A selection of high-impact projects ranging from security auditing tools to enterprise-grade web platforms.</p>
+</div>
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="group relative bg-white/5 p-4 rounded-3xl border border-white/5 hover:border-primary/50 transition-all overflow-hidden">
+<div class="h-64 rounded-2xl overflow-hidden mb-8 relative">
+<img alt="Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWBFRqzDIsXV_8sKSvrBwpOj1_FLzi30yb0P6Llc3YHb6ri9enim0YFhnyfLnVWzyq44hDx_RwhzY1QDAMsEBY5C0cNX7lf1v_FHZuXgmhNEZ2XqjF-3RUNBaWUczj9ofEecFdfQ27YgeD7Ll77HIysu_MW042PKbDB5MIaqCIthKUfqGkILR08xgH_0iDIGy83OoIY-_ePK0244xoygmp--H71F8d9tEX5hsHa06NuKGcR3KbNGm1vf94e_H-_RMBR2_hpghza1w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy to-transparent opacity-60"></div>
+</div>
+<div class="space-y-4 px-2">
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">E-Commerce Security</span>
+<span class="material-symbols-outlined text-primary">terminal</span>
+</div>
+<h4 class="text-2xl font-bold">SecureCart Nexus</h4>
+<p class="text-slate-400 text-sm leading-relaxed">Full-stack platform with integrated end-to-end encryption and automated vulnerability scanning.</p>
+<div class="flex gap-4 pt-4">
+<a class="text-primary text-xs font-bold border-b border-primary pb-1 flex items-center gap-2" href="#">VIEW CASE <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+</div>
+</div>
+<div class="group relative bg-white/5 p-4 rounded-3xl border border-white/5 hover:border-primary/50 transition-all overflow-hidden">
+<div class="h-64 rounded-2xl overflow-hidden mb-8 relative">
+<img alt="Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Uv0jisB53jlmiYIwPIEqf6dgRwoIx9jh_7LBA72UNOwAXqrKTYWwA33ulgB65WqNgkjDGb1bUGI1oGtGcqSuBMwpwCxYCkXmODi-VFjmmRXrximzvHsi8Q3h3TrmYWq-PkmISsSb8Hn_kUM6YjEpX24jg5cSvw7ok92rYyJzhohqPeKc9ytPvw2Ou0sWRen6tQ4-3ZhTcEOa339tWckbe8-cvIxXSq4iB1U29Kcb7YOobnxu8kPkZlJnW4659WxYLqUPVjLxe50"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy to-transparent opacity-60"></div>
+</div>
+<div class="space-y-4 px-2">
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Network Intelligence</span>
+<span class="material-symbols-outlined text-primary">radar</span>
+</div>
+<h4 class="text-2xl font-bold">HeaderSentry AI</h4>
+<p class="text-slate-400 text-sm leading-relaxed">Advanced HTTP header analyzer using machine learning to detect suspicious pattern deviations in real-time.</p>
+<div class="flex gap-4 pt-4">
+<a class="text-primary text-xs font-bold border-b border-primary pb-1 flex items-center gap-2" href="#">VIEW CASE <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+</div>
+</div>
+<div class="group relative bg-white/5 p-4 rounded-3xl border border-white/5 hover:border-primary/50 transition-all overflow-hidden">
+<div class="h-64 rounded-2xl overflow-hidden mb-8 relative">
+<img alt="Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh0M7KOjyE-ztuyktL2IBt-1enFIYQy9bg537SBlfMVFtTR2scHz7ngNjIiillDHPp7KedHiVSNjrqgPuE35K1m05Hy0iv60Wvq_xglWt8L18lIj0tVqhyeCybn8IJsdx0TL0xr4x8uM-mhaow5CtAleXfJsgxl6CjboD4aj2ybalkJILLfWi4JMsrdz_NX_hfCXxSaLxn7W6BT9c7j-lZ5g4Du3XPtoOu_pUNBwDVFYpjfVwQG0iVF1VNNsvMb7qGwxb4s39b99I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-navy to-transparent opacity-60"></div>
+</div>
+<div class="space-y-4 px-2">
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">UX/UI Defense</span>
+<span class="material-symbols-outlined text-primary">palette</span>
+</div>
+<h4 class="text-2xl font-bold">WeatherMood OS</h4>
+<p class="text-slate-400 text-sm leading-relaxed">Dynamic visualization platform that adjusts security posture and UI based on threat levels and environmental data.</p>
+<div class="flex gap-4 pt-4">
+<a class="text-primary text-xs font-bold border-b border-primary pb-1 flex items-center gap-2" href="#">VIEW CASE <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-navy" id="contact">
+<div class="max-w-4xl mx-auto px-6">
+<div class="glass-morphism p-12 rounded-[2rem] border border-primary/20 relative">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-primary text-navy flex items-center justify-center rounded-2xl shadow-[0_0_30px_rgba(6,182,212,0.4)]">
+<span class="material-symbols-outlined text-5xl font-black">alternate_email</span>
+</div>
+<div class="text-center mt-8 mb-16 space-y-4">
+<h2 class="text-4xl font-black">Let's Secure the <span class="text-primary">Future</span></h2>
+<p class="text-slate-400">Available for high-stakes security projects and innovative system architecture.</p>
+</div>
+<form class="space-y-8">
+<div class="grid md:grid-cols-2 gap-8">
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase tracking-widest text-primary">Identity</label>
+<input class="w-full bg-navy border-b border-white/10 p-4 focus:border-primary focus:ring-0 transition-all outline-none text-white placeholder-slate-700 font-medium" placeholder="Full Name" type="text"/>
+</div>
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase tracking-widest text-primary">Comms Channel</label>
+<input class="w-full bg-navy border-b border-white/10 p-4 focus:border-primary focus:ring-0 transition-all outline-none text-white placeholder-slate-700 font-medium" placeholder="Email Address" type="email"/>
+</div>
+</div>
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase tracking-widest text-primary">The Mission</label>
+<textarea class="w-full bg-navy border-b border-white/10 p-4 focus:border-primary focus:ring-0 transition-all outline-none text-white placeholder-slate-700 font-medium" placeholder="Describe the scope of work..." rows="4"></textarea>
+</div>
+<button class="w-full py-6 bg-primary text-navy font-black uppercase tracking-widest rounded-xl hover:scale-[1.02] active:scale-95 transition-all shadow-[0_0_30px_rgba(6,182,212,0.2)]" type="submit">
+                    Initialize Connection
+                </button>
+</form>
+</div>
+</div>
+</section>
+<footer class="py-16 border-t border-white/5 bg-navy">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="space-y-4">
+<div class="text-3xl font-black tracking-tighter text-white">SRIRAM<span class="text-primary">.</span></div>
+<p class="text-slate-500 text-sm max-w-xs leading-loose">Pioneering secure development practices through architectural excellence and rigorous analysis.</p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-6">
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="#">Twitter</a>
+</div>
+<p class="text-slate-600 text-xs font-medium">© 2024 SRIRAM | SECURED BY DESIGN</p>
+</div>
+</div>
+</footer>
+<a class="fixed bottom-10 right-10 w-16 h-16 bg-white/5 backdrop-blur-md border border-white/10 text-white rounded-full flex items-center justify-center hover:bg-primary hover:text-navy transition-all z-50 group" href="#home">
+<span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform">north</span>
+</a>
+
+</body></html>

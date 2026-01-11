@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import Pattern from "../components/Pattern";
-import profilePic from "../assets/profile.png"; // Use your hero/profile image
 import AboutCard from "../components/CatLoader";
 
 export default function About() {
@@ -9,8 +7,6 @@ export default function About() {
       id="about"
       className="relative py-16 px-6 text-white overflow-hidden"
     >
-      {/* Background Pattern */}
-      <Pattern />
 
       <motion.div
         className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10"
