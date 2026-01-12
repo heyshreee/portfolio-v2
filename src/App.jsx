@@ -8,6 +8,7 @@ import Footer from "./pages/Footer";
 import Loader from "./components/Loader";
 import About from "./pages/About";
 import BackToTop from "./components/BackToTop";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -32,15 +33,16 @@ function App() {
 
   return (
     <div className="relative bg-transparent transition-colors duration-500">
+      <Toaster />
       <Header />
       <Hero />
-      <Projects />
-      <Skills />
       <About />
+      <Skills />
+      <Projects />
       <Contact />
       <Footer />
-
       <BackToTop />
+
     </div>
   );
 }

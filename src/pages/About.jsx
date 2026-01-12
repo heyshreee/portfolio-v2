@@ -2,6 +2,19 @@ import React from "react";
 import profilePic from "../assets/profile.png";
 
 export default function About() {
+  const [repoCount, setRepoCount] = React.useState(42); // Default fallback
+
+  React.useEffect(() => {
+    fetch("https://api.github.com/users/heyshreee")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.public_repos) {
+          setRepoCount(data.public_repos);
+        }
+      })
+      .catch((err) => console.error("Error fetching GitHub data:", err));
+  }, []);
+
   return (
     <section className="relative py-24 px-6 grid-bg overflow-hidden" id="about">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -40,7 +53,7 @@ export default function About() {
                   <div className="grid grid-cols-2 gap-4 border-t border-slate-800 pt-6">
                     <div className="text-center">
                       <p className="text-xs text-slate-500 uppercase font-mono">Repositories</p>
-                      <p className="text-xl font-bold text-white">42</p>
+                      <p className="text-xl font-bold text-white">{repoCount}</p>
                     </div>
                     <div className="text-center">
                       <p className="text-xs text-slate-500 uppercase font-mono">Rank</p>
