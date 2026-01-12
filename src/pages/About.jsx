@@ -3,7 +3,8 @@ import profilePic from "../assets/profile.png";
 
 export default function About() {
   return (
-    <section className="py-24 px-6 bg-slate-50/50 dark:bg-slate-900/30" id="about">
+    <section className="relative py-24 px-6 grid-bg overflow-hidden" id="about">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold mb-4 text-slate-900 dark:text-white">About Me</h2>
