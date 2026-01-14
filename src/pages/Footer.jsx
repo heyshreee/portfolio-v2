@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { formatVisitorCount } from "../utils/formatCount";
 
 export default function Footer() {
   const [visits, setVisits] = useState("Loading...");
 
   useEffect(() => {
-    fetch("https://api.countapi.xyz/hit/heyshreee-portfolio/visits")
+    fetch("http://localhost:3000/track/trk_d1BXGHfmWdg")
       .then((res) => res.json())
-      .then((data) => setVisits(`${data.value} Visits`))
+      .then((data) => setVisits(`${formatVisitorCount(data.value)} Visits`))
       .catch(() => setVisits("Visitor tracking active"));
   }, []);
 
@@ -25,3 +26,4 @@ export default function Footer() {
     </footer>
   );
 }
+
