@@ -1,55 +1,119 @@
-import { motion } from "framer-motion";
-import Pattern from "../components/Pattern";
-import profilePic from "../assets/profile.png"; // Use your hero/profile image
-import AboutCard from "../components/CatLoader";
+import React from "react";
+import profilePic from "../assets/profile.png";
 
 export default function About() {
+  const [repoCount, setRepoCount] = React.useState(42); // Default fallback
+
+  React.useEffect(() => {
+    fetch("https://api.github.com/users/heyshreee")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.public_repos) {
+          setRepoCount(data.public_repos);
+        }
+      })
+      .catch((err) => console.error("Error fetching GitHub data:", err));
+  }, []);
+
   return (
-    <section
-      id="about"
-      className="relative py-16 px-6 text-white overflow-hidden"
-    >
-      {/* Background Pattern */}
-      <Pattern />
-
-      <motion.div
-        className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        {/* Left: Image */}
-        <div className="flex-1 flex justify-center md:justify-start">
-          {/* <img
-            src={profilePic}
-            alt="Sriram"
-            className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-blue-500 shadow-lg"
-          /> */}
-          <AboutCard />
-          
+    <section className="relative py-24 px-6 grid-bg overflow-hidden" id="about">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-extrabold mb-4 text-slate-900 dark:text-white">About Me</h2>
+          <div className="w-16 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
-
-        {/* Right: About Text */}
-        <div className="flex-1">
-          <h2 className="text-4xl font-bold text-blue-400 mb-4">About Me</h2>
-          <p className="text-gray-300 mb-4 text-lg">
-            I’m <strong>Sriram</strong>, a Cyber Security student with a passion for building secure, efficient systems and full-stack web applications. I enjoy combining creative design with robust code to deliver professional digital experiences.
-          </p>
-          <p className="text-gray-300 mb-4 text-lg">
-            My interests include penetration testing, web development, learning new technologies, and designing interfaces. I’m constantly exploring ways to improve my skills and contribute to meaningful projects.
-          </p>
-
-          {/* Highlights */}
-          <div className="mt-6 flex flex-wrap gap-4">
-            <span className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md text-sm">Cyber Security</span>
-            <span className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md text-sm">Full-Stack Development</span>
-            <span className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md text-sm">Figma Design</span>
-            <span className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md text-sm">Node.js & Express</span>
-            <span className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md text-sm">React.js</span>
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5 flex justify-center">
+            <div className="w-full max-w-sm identity-card-glow transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+              <div className="bg-slate-900 rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl">
+                <div className="bg-slate-800 px-4 py-3 flex items-center gap-2 border-b border-slate-700">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                  <div className="text-xs text-slate-400 font-mono ml-4">profile.json</div>
+                </div>
+                <div className="p-8">
+                  <div className="relative w-32 h-32 mx-auto mb-6">
+                    <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping"></div>
+                    <div className="relative w-full h-full rounded-full border-2 border-primary p-1 bg-slate-800">
+                      <img
+                        alt="Profile"
+                        className="w-full h-full rounded-full object-cover opacity-80"
+                        src={profilePic}
+                      />
+                    </div>
+                  </div>
+                  <div className="text-center space-y-2 mb-8">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">Sriram</h3>
+                    <p className="text-primary font-mono text-sm">Cyber Security Student</p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 border-t border-slate-800 pt-6">
+                    <div className="text-center">
+                      <p className="text-xs text-slate-500 uppercase font-mono">Repositories</p>
+                      <p className="text-xl font-bold text-white">{repoCount}</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-xs text-slate-500 uppercase font-mono">Rank</p>
+                      <p className="text-xl font-bold text-white">Pro</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-primary px-4 py-2 text-center">
+                  <span className="text-[10px] font-mono font-bold text-white tracking-widest uppercase">
+                    Verified Developer Identity
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-7">
+            <div className="space-y-6 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+              <p>
+                I'm <span className="text-slate-900 dark:text-white font-bold">Sriram</span>, a dedicated student specializing in{" "}
+                <span className="bg-primary/10 text-primary px-1.5 py-0.5 rounded font-semibold">
+                  Cyber Security
+                </span>{" "}
+                with a profound interest in building secure, resilient infrastructures and{" "}
+                <span className="bg-primary/10 text-primary px-1.5 py-0.5 rounded font-semibold">
+                  Full-stack
+                </span>{" "}
+                web applications.
+              </p>
+              <p>
+                My journey is fueled by a commitment to combining creative front-end design with robust, high-performance backend systems. I believe that security shouldn't be an afterthought but an integral part of the architectural DNA of any project.
+              </p>
+              <p>
+                Beyond coding, I am an active learner in penetration testing and UI/UX design, constantly exploring new ways to bridge the gap between technical complexity and user accessibility.
+              </p>
+            </div>
+            <div className="mt-10">
+              <h4 className="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-6">
+                Expertise & Specialties
+              </h4>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  "Cyber Security",
+                  "Full-Stack Development",
+                  "Figma Design",
+                  "Node.js & Express",
+                  "React.js",
+                  "Python Security",
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-5 py-2.5 rounded-full border border-primary text-primary font-semibold text-sm hover:bg-primary hover:text-white transition-all cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

@@ -1,182 +1,197 @@
-import { motion } from "framer-motion";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import Pattern from "../components/Pattern";
-import Icon from "../components/Icon";
-
-import { useState } from "react";
+import React, { useState } from "react";
+import { Mail, MapPin } from "lucide-react";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { SiBuymeacoffee } from "react-icons/si";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-
-
-
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setSuccess(null);
+
     try {
-      const res = await fetch("https://project-management-mdb.onrender.com/api/v1/submit", {
+      // -----------------------------------------------------------------
+      // PASTE YOUR GOOGLE SHEETS WEB APP URL HERE
+      // -----------------------------------------------------------------
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxK4B0nPmp3P955v0-YNu_pHTypgEve9lAo_iewoZIGW-fezb-d1TXygxbz5IA0UPU/exec";
+
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        mode: "no-cors", // Important: Allows sending data to Google Apps Script without CORS errors
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, subject, message }),
       });
 
-      const data = await res.json();
-      setSuccess(true);
+      // With 'no-cors', we can't check the response status, so we assume success if no error was thrown.
+      toast.success("Message sent successfully!", {
+        position: "top-right",
+        style: {
+          background: "#10B981",
+          color: "#fff",
+        },
+      });
       setName("");
       setEmail("");
+      setSubject("");
       setMessage("");
-
     } catch (err) {
       console.error("Submission error:", err);
-      setSuccess(false);
+      toast.error("Failed to send message. Please try again.", {
+        position: "top-right",
+      });
     } finally {
       setLoading(false);
     }
   };
 
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
-
   return (
-    <section
-      id="contact"
-      className="relative py-16 px-6 text-white overflow-hidden"
-    >
-      {/* Background */}
-      <Pattern />
-      <Particles
-        id="contact-particles"
-        init={particlesInit}
-        options={{
-          fullScreen: { enable: false },
-          fpsLimit: 60,
-          particles: {
-            number: { value: 40, density: { enable: true, area: 800 } },
-            color: { value: "#4f46e5" },
-            shape: { type: "circle" },
-            opacity: { value: 0.2 },
-            size: { value: { min: 2, max: 4 } },
-            move: { enable: true, speed: 1.5, outModes: "bounce" },
-            links: {
-              enable: true,
-              distance: 120,
-              color: "#4f46e5",
-              opacity: 0.1,
-              width: 1,
-            },
-          },
-          interactivity: {
-            events: {
-              onHover: { enable: true, mode: "repulse" },
-              onClick: { enable: true, mode: "push" },
-            },
-            modes: {
-              repulse: { distance: 80, duration: 0.4 },
-              push: { quantity: 4 },
-            },
-          },
-        }}
-        className="absolute top-0 left-0 w-full h-full -z-10"
-      />
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="max-w-5xl mx-auto relative z-10"
-      >
-        <h2 className="text-4xl font-bold text-blue-400 text-center mb-8">
-          Contact Me
-        </h2>
-        <p className="text-gray-300 text-center mb-8">
-          I’m open to collaborations, freelance work, or internship
-          opportunities. Feel free to reach out via email, social platforms, or
-          using the contact form below.
-        </p>
-
-        <div className="flex flex-col md:flex-row gap-12">
-          {/* Left Side: Contact Info */}
-          <div className="flex-1 flex flex-col items-center md:items-start gap-6">
-            <a
-              href="mailto:sriram0607@gmail.com?subject=Collaboration%20Opportunity&body=Hi%20Sriram,%0A%0AI%20am%20reaching%20out%20to%20you%20for%20a%20collaboration%20opportunity.%0A%0A%0APlease%20let%20me%20know%20if%20you%27re%20interested%20and%20available.%0A%0A%0AThanks%2C%20Sriram"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg text-white font-semibold"
-            >
-              Email Me
-            </a>
-
-            <div className="flex gap-6 text-gray-300 mt-4">
-              <Icon type="github" href="https://github.com/heyshreee" />
-              <Icon
-                type="linkedin"
-                href="https://linkedin.com/in/sriram-sriram-41b52532b"
-              />
-              <Icon type="twitter" href="https://x.com/srishree0607" />
-              <Icon
-                type="instagram"
-                href="https://www.instagram.com/wtf._shr"
-              />
+    <section className="relative py-24 px-6 grid-bg overflow-hidden" id="contact">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-extrabold mb-4 text-slate-900 dark:text-white">Get In Touch</h2>
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            I'm currently open to internship opportunities and freelance work. Let's build something secure together.
+          </p>
+        </div>
+        <div className="grid lg:grid-cols-2 gap-12">
+          <div className="space-y-8">
+            <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700">
+              <h3 className="text-xl font-bold mb-6 text-slate-900 dark:text-white">Contact Information</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 uppercase font-bold">Email Me</p>
+                    <p className="font-semibold text-slate-900 dark:text-white">sriram0607@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 uppercase font-bold">Location</p>
+                    <p className="font-semibold text-slate-900 dark:text-white">Chennai, India</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-10 flex gap-4 flex-wrap">
+                <a
+                  href="https://github.com/heyshreee"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg hover:text-[#333] dark:hover:text-white transition-colors text-slate-600 dark:text-slate-300"
+                >
+                  <FaGithub className="w-6 h-6" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/sriram-sriram-41b52532b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg hover:text-[#0077b5] transition-colors text-slate-600 dark:text-slate-300"
+                >
+                  <FaLinkedin className="w-6 h-6" />
+                </a>
+                <a
+                  href="https://x.com/srishree0607"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg hover:text-[#1DA1F2] transition-colors text-slate-600 dark:text-slate-300"
+                >
+                  <FaXTwitter className="w-6 h-6" />
+                </a>
+                <a
+                  href="https://www.instagram.com/wtf._shr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg hover:text-[#E1306C] transition-colors text-slate-600 dark:text-slate-300"
+                >
+                  <FaInstagram className="w-6 h-6" />
+                </a>
+                <a
+                  href="https://buymeacoffee.com/srishree06a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg hover:text-[#FFDD00] transition-colors text-slate-600 dark:text-slate-300"
+                  title="Buy Me a Coffee"
+                >
+                  <SiBuymeacoffee className="w-6 h-6" />
+                </a>
+              </div>
             </div>
           </div>
-
-          {/* Right Side: Contact Form */}
-          <div className="flex-1 bg-gray-800 rounded-lg p-6 shadow-lg">
-            <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 space-y-4"
+          >
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-bold mb-2 text-slate-500">Your Name</label>
+                <input
+                  className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all px-4 py-3 text-slate-900 dark:text-white outline-none"
+                  placeholder="John Doe"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-bold mb-2 text-slate-500">Email Address</label>
+                <input
+                  className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all px-4 py-3 text-slate-900 dark:text-white outline-none"
+                  placeholder="john@example.com"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-bold mb-2 text-slate-500">Subject</label>
               <input
+                className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all px-4 py-3 text-slate-900 dark:text-white outline-none"
+                placeholder="Collaboration Idea"
                 type="text"
-                placeholder="Your Name"
-                value={name}
-                id="name"
-                onChange={(e) => setName(e.target.value)}
-                className="p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
                 required
               />
-              <input
-                type="email"
-                placeholder="Your Email"
-                value={email}
-                id="email"
-                onChange={(e) => setEmail(e.target.value)}
-                className="p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-
+            </div>
+            <div>
+              <label className="block text-sm font-bold mb-2 text-slate-500">Your Message</label>
               <textarea
-                placeholder="Your Message"
+                className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all px-4 py-3 text-slate-900 dark:text-white outline-none resize-none"
+                placeholder="How can I help you?"
+                rows="4"
                 value={message}
-                id="message"
                 onChange={(e) => setMessage(e.target.value)}
-                className="p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-                rows={5}
                 required
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="bg-blue-600 hover:bg-blue-700 transition text-white font-semibold py-3 rounded-md"
-              >
-                {loading ? "Sending..." : "Send Submit"}
-              </button>
-              {success === true && (
-                <p className="text-green-400 mt-2">Submitted successfully!</p>
-              )}
-              {success === false && (
-                <p className="text-red-400 mt-2">
-                  Submission failed. Try again.
-                </p>
-              )}
-            </form>
-          </div>
+              ></textarea>
+            </div>
+            <button
+              className="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 disabled:opacity-70 disabled:cursor-not-allowed"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+          </form>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
