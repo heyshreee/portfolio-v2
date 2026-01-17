@@ -5,10 +5,28 @@ export default function Footer() {
   const [visits, setVisits] = useState("Loading...");
 
   useEffect(() => {
-    fetch("http://localhost:3000/track/trk_d1BXGHfmWdg")
+    const apiUrl = import.meta.env.VITE_TRACK_API_URL;
+
+
+    // 1. Track the visit (POST)
+    fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        pageUrl: window.location.href,
+        referrer: document.referrer,
+      }),
+    })
+      .then(() => {
+        // 2. Get the updated count (GET)
+        return fetch(apiUrl);
+      })
       .then((res) => res.json())
-      .then((data) => setVisits(`${formatVisitorCount(data.value)} Visits`))
-      .catch(() => setVisits("Visitor tracking active"));
+      .then((data) => setVisits(`${formatVisitorCount(data.count)} Visits`))
+      .catch((err) => {
+        console.error("Tracking error:", err);
+        setVisits("Visitor tracking active");
+      });
   }, []);
 
   return (
@@ -26,4 +44,3 @@ export default function Footer() {
     </footer>
   );
 }
-

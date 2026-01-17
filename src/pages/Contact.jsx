@@ -20,7 +20,7 @@ export default function Contact() {
       // -----------------------------------------------------------------
       // PASTE YOUR GOOGLE SHEETS WEB APP URL HERE
       // -----------------------------------------------------------------
-      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxK4B0nPmp3P955v0-YNu_pHTypgEve9lAo_iewoZIGW-fezb-d1TXygxbz5IA0UPU/exec";
+      const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
